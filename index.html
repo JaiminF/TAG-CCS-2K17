@@ -50,17 +50,17 @@ Materialize.toast('Registered successfully!', 4000, 'rounded') // 4000 is the du
 </head>
 
 <body style="background-image: url('img/1.jpg'); font-family: Reem Kufi">
-      <div class="row" style="width: 70%; height: 70%">
+      <div class="row" style="width: 70%; height: 60%">
         <div class="col s12">
           <div class="card white">
             <div class="card-content black-text">
               <span class="card-title" style="color: black; text-align: center"><b><h2>Join Us!</h2></b></span>
 
               <div class="row">
-                <div class="col s6">
+                <div id="image" class="col s6">
                   <img src="img/logocombined.png" style="width: 100%; height: 70%">
                 </div>
-                <div class="col s6">
+                <div id="para" class="col s6">
                   <p>
                     <b><h5 style="font-size: 20px">Technical </h5></b>
                     <p style="font-size: 17px">Learn. Create. Innovate. Be a part of the technical team to create awesome web, app and game projects!</p>
@@ -76,9 +76,43 @@ WOW is the one we aim for!</p>
                   </p>
                 </div>
             </div>
+            <style>
+            @media only screen and (max-width: 768px) {
+              #image{
+                width: 100%;
+              }
+              #para{
+                width: 100%;
+              }
+            }
+            @media only screen and (max-width: 500px) {
+              #image{
+                width: 100%;
+              }
+              #para{
+                width: 100%;
+              }
+            }
+            @media only screen and (max-width: 768px) {
+              #image{
+                width: 100%;
+              }
+              #para{
+                width: 100%;
+              }
+            }
+            @media only screen and (max-width: 500px) {
+              #image{
+                width: 100%;
+              }
+              #para{
+                width: 100%;
+              }
+            }
+            </style>
             <center>
             <div class="card-action">
-              <a class="waves-effect waves-light btn modal-trigger" href="#modal1" style="color: black; background-color: #FD9300">Get Started</a>
+              <a class="waves-effect waves-light btn modal-trigger" href="#modal1" style="color: black; background-color: #FD9300">Register</a>
             </div>
           </center>
         </div>
@@ -120,7 +154,7 @@ WOW is the one we aim for!</p>
               </div>
             </div>
               <br><br>
-              <button style="color: black; background-color: #FD9300" class="btn waves-effect waves-light" type="submit" name="action">Register</button>
+              <button style="color: black; background-color: #FD9300" class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
          </form>
 
         </div>
