@@ -1,7 +1,7 @@
 <?php
-$user   = "Hack";
-$password ="MGVh5MAs9fHaxQcK";
-$database = "ccs";
+$user   = "tagcl1dc_prk";
+$password ="stealth2017";
+$database = "tagcl1dc_ccs";
 $host   = "localhost";
 $con = mysqli_connect($host,$user,$password,$database);
 if (!$con)
