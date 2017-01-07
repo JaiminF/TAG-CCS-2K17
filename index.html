@@ -90,41 +90,41 @@ Materialize.toast('Registered successfully!', 4000, 'rounded') // 4000 is the du
         <div class="modal-content center-align">
           <center><h4>Register here!</h4></center>
           <br>
-          <form action="action.php" method="POST">
+          <form name="form1" action="action.php" method="POST" onsubmit="return myfun()">
             <div class="form-group">
                 <i class="material-icons">person</i>
-              &nbsp;  <input style="color: black; width: 60%" type="text" class="form-control input-lg" name="fullname" placeholder="Your Name" required>
+              &nbsp;  <input style="color: black; width: 60%" type="text" class="form-control input-lg" name="fullname" placeholder="Your Name" id="fullname" required>
             </div>
             <div class="form-group">
               <i class="material-icons">lock</i>
-            &nbsp;    <input style="color: black; width: 60%" type="text" class="form-control input-lg" name="regno" placeholder="Registration Number" required>
+            &nbsp;    <input style="color: black; width: 60%" type="text" class="form-control input-lg" name="regno" placeholder="Registration Number" id="regno" required>
             </div>
               <div class="form-group">
               <i class="material-icons">phone</i>
-            &nbsp;      <input style="color: black; width: 60%" type="number" class="form-control input-lg" name="phonenumber" placeholder="Phone Number" required>
+            &nbsp;      <input id="numb" style="color: black; width: 60%" type="number" class="form-control input-lg" name="phonenumber" placeholder="Phone Number" required>
               </div>
               <div class="form-group">
                 <div class="row margin">
                 <div class="input-field col s9 offset-s1">
                   <input type="hidden" id="techh" name="tech"  value="No">
-				  <input class="col s3" type="checkbox" id="tech" name="tech" value="Yes"> 
+				  <input class="col s3" type="checkbox" id="tech" name="tech" value="Yes">
                   <label for="tech">Technical</label>
 				  <input type="hidden" id="mangh" name="mang"  value="No">
                 &nbsp;&nbsp;&nbsp; &nbsp; <input class="col s3" type="checkbox" id="mang" name="mang" value="Yes">
-				
+
                   <label for="mang">Management</label>
 										<input type="hidden" id="designh" name="design"  value="No">
               &nbsp;&nbsp; &nbsp;&nbsp;   <input class="col s3" type="checkbox" id="design" name="design" value="Yes">
-			  
+
                   <label for="design">Design</label>
 									<input type="hidden" id="edith" name="edit"  value="No">
               &nbsp; &nbsp; &nbsp;  <input class="col s3" type="checkbox" id="edit" name="edit" value="Yes">
-			  
+
                   <label for="edit">Editorial</label>
-				  
+
                 </div>
               </div>
-			  
+
             </div>
               <br><br>
               <button style="color: black; background-color: #FD9300" class="btn waves-effect waves-light" type="submit" name="action">Register</button>
@@ -133,19 +133,48 @@ Materialize.toast('Registered successfully!', 4000, 'rounded') // 4000 is the du
 
       </div>
 	  <script>
-			if(document.getElementById("tech").checked) 
+function myfun(){
+  var x;
+  var name = /^[A-Za-z]{3,20}$/;
+  var regnumber = /^16[B|M]{1}[A-Z]{2}[0-9]{4}$/;
+  var fullname = document.getElementById("fullname").value;
+  var regno = document.getElementById("regno").value;
+  x = document.getElementById("numb").value;
+  if (/^\d{10}$/.test(x)) {
+
+} else {
+    alert("Invalid number; must be ten digits")
+    return false;
+}
+
+if (/^[A-Za-z ]{3,20}$/.test(fullname)) {
+	}
+	else{
+    alert("Your Name seems invalid !");
+	return false;
+   }
+   if (/^16[B|M]{1}[A-Z]{2}[0-9]{4}$/.test(regno)) {
+	}
+	else{
+    alert("Your Registration numbers looks invalid !");
+	return false;
+   }
+	return true;
+
+}
+			if(document.getElementById("tech").checked)
 			{
 				document.getElementById('techh').value = "Yes";
 			}
-			if(document.getElementById("mang").checked) 
+			if(document.getElementById("mang").checked)
 			{
 				document.getElementById('mangh').disabled = true;
 			}
-			if(document.getElementById("design").checked) 
+			if(document.getElementById("design").checked)
 			{
 				document.getElementById('designh').disabled = true;
 			}
-			if(document.getElementById("edit").checked) 
+			if(document.getElementById("edit").checked)
 			{
 				document.getElementById('techh').disabled = true;
 			}
